@@ -1,0 +1,7 @@
+export default function Loading() {
+  return <main id="main-content" className="bg-[var(--page-bg)]"><section className="container-grid py-8 sm:py-10 lg:py-12"><div className="space-y-10" aria-label="Loading marketplace">
+    <div className="rounded-[32px] bg-white p-6 shadow-[var(--shadow-soft)] sm:p-8 lg:p-10"><div className="h-4 w-32 animate-pulse rounded-full bg-[var(--blue-surface)]" /><div className="mt-5 h-12 max-w-xl animate-pulse rounded-2xl bg-[var(--secondary-surface)]" /><div className="mt-4 h-6 max-w-2xl animate-pulse rounded-full bg-[var(--secondary-surface)]" /><div className="mt-8 grid gap-3 sm:grid-cols-[1fr_auto]"><div className="h-14 animate-pulse rounded-[18px] bg-[var(--secondary-surface)]" /><div className="h-14 w-36 animate-pulse rounded-[16px] bg-[var(--blue-surface)]" /></div></div>
+    <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">{Array.from({ length: 12 }, (_, index) => <div key={index} className="h-48 animate-pulse rounded-[24px] bg-white shadow-[var(--shadow-soft)]" />)}</div>
+    <div className="grid grid-cols-2 gap-5 lg:grid-cols-4">{Array.from({ length: 8 }, (_, index) => <div key={index} className="h-80 animate-pulse rounded-[28px] bg-white shadow-[var(--shadow-soft)]" />)}</div>
+  </div></section></main>;
+}

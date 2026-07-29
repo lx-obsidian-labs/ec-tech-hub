@@ -39,3 +39,25 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+.codersinflow
+.vscode
+.env
+.venv
+.codex
+out
+dist
+*.vsix
+.claude
+CLAUDE.md
+.git
+*.log
+*.tmp
+__pycache__
+*.pyc
+.env.local
+.next
+.github
+.cursor
+*.out
+*.pid
+audit.json
