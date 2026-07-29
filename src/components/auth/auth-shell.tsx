@@ -7,7 +7,7 @@ export function AuthShell({ title, description, children }: { title: string; des
       <div className="network-bg fixed inset-0 opacity-50" aria-hidden="true" />
       <div className="relative mx-auto grid min-h-[calc(100vh-64px)] max-w-[1180px] items-center gap-8 lg:grid-cols-[0.9fr_1fr]">
         <section className="hidden lg:block">
-          <Link href="/" className="inline-flex rounded-[18px] bg-white p-3 shadow-[var(--shadow-soft)]"><LogoMark /></Link>
+          <Link href="/" className="inline-flex rounded-[18px] bg-white p-2 shadow-[var(--shadow-soft)]"><LogoMark /></Link>
           <h1 className="mt-10 max-w-xl text-5xl font-bold leading-[1.05] tracking-[-0.05em] text-[var(--deep-navy)]">Secure access to Africa’s trusted technology ecosystem.</h1>
           <p className="mt-6 max-w-lg text-lg leading-8 text-[var(--secondary-text)]">Manage repairs, onboarding, services, marketplace activity, and learning from one calm, protected account experience.</p>
           <div className="mt-8 grid max-w-lg gap-3 text-sm text-[var(--secondary-text)]">

@@ -23,7 +23,7 @@ export function SiteFooter() {
     <footer className="bg-[var(--footer-bg)] text-white">
       <div className="mx-auto grid max-w-[1320px] gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.4fr_1fr_1fr_1fr] lg:px-10">
         <div>
-          <div className="inline-flex rounded-[18px] bg-white p-2"><LogoMark /></div>
+          <LogoMark />
           <p className="mt-5 max-w-sm text-sm leading-7 text-slate-300">EC TECH HUB connects African technology users with repair support, trusted services, learning pathways, and responsible troubleshooting tools.</p>
         </div>
         <FooterColumn title="Platform" links={navLinks.filter((link) => link.href !== "/")} />

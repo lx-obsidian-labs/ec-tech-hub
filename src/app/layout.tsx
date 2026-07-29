@@ -25,6 +25,7 @@ export const metadata: Metadata = {
     description: "Find repair support, technicians, gadget listings, AI troubleshooting, digital services, and technology learning.",
   },
   robots: { index: true, follow: true },
+  icons: { icon: "/images/ec-tech-hub-logo.png", shortcut: "/images/ec-tech-hub-logo.png", apple: "/images/ec-tech-hub-logo.png" },
 };
 
 const structuredData = {
