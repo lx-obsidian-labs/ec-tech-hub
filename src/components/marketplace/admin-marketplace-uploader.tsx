@@ -1,0 +1,20 @@
+"use client";
+
+import { useActionState } from "react";
+import { createAdminMarketplaceProduct, type MarketplaceActionState } from "@/lib/marketplace/actions";
+
+const initial: MarketplaceActionState = { ok: false };
+const categories = ["Laptops", "Smartphones", "Desktop PCs", "Gaming", "Networking", "Printers", "Accessories", "Storage", "Components", "Monitors", "Audio", "Smart Home"];
+
+export function AdminMarketplaceUploader() {
+  const [state, action, pending] = useActionState(createAdminMarketplaceProduct, initial);
+  return <form action={action} encType="multipart/form-data" className="grid gap-5 rounded-[28px] bg-white p-6 shadow-[var(--shadow-soft)] sm:p-8">
+    <div><p className="text-sm font-black uppercase tracking-[0.16em] text-[var(--brand-blue)]">Publish product</p><h2 className="mt-2 text-2xl font-black text-[var(--deep-navy)]">Add marketplace item</h2><p className="mt-2 text-sm leading-6 text-[var(--secondary-text)]">Admin-created products are approved immediately. Only publish items with accurate details and images.</p></div>
+    <div className="grid gap-4 md:grid-cols-2"><Field name="title" label="Product title" required /><Field name="sellerName" label="Seller or business name" /><Field name="brand" label="Brand" /><Field name="model" label="Model" /><label className="grid gap-2 text-sm font-bold text-[var(--deep-navy)]">Category<select name="category" required className="h-12 rounded-[14px] border border-[var(--divider)] bg-white px-3 font-normal"><option value="">Choose category</option>{categories.map((item) => <option key={item}>{item}</option>)}</select></label><label className="grid gap-2 text-sm font-bold text-[var(--deep-navy)]">Condition<select name="condition" required className="h-12 rounded-[14px] border border-[var(--divider)] bg-white px-3 font-normal"><option value="">Choose condition</option>{["new", "open_box", "refurbished", "used", "for_parts"].map((item) => <option key={item} value={item}>{item.replace("_", " ")}</option>)}</select></label><Field name="city" label="City" /><Field name="province" label="Province" /><Field name="price" label="Price (ZAR, optional)" type="number" /> <label className="grid gap-2 text-sm font-bold text-[var(--deep-navy)] md:col-span-2">Description<textarea name="description" rows={4} maxLength={1200} className="rounded-[14px] border border-[var(--divider)] p-3 font-normal" placeholder="Describe what is included, condition notes, and buyer expectations." /></label><label className="grid gap-2 text-sm font-bold text-[var(--deep-navy)] md:col-span-2">Product image <input name="image" type="file" accept="image/jpeg,image/png,image/webp" className="rounded-[14px] border border-dashed border-[var(--brand-blue)] bg-[var(--blue-surface)] p-3 text-sm font-normal" /><span className="text-xs font-normal text-[var(--muted-text)]">JPG, PNG, or WebP up to 10 MB.</span></label></div>
+    <label className="flex items-center gap-3 text-sm text-[var(--secondary-text)]"><input type="checkbox" name="featured" className="size-4" /> Feature this product on the marketplace homepage</label>
+    {state.message ? <p role="status" className={state.ok ? "rounded-xl bg-[var(--trust-green-surface)] p-3 text-sm font-semibold text-[var(--trust-green)]" : "rounded-xl bg-red-50 p-3 text-sm font-semibold text-[var(--danger)]"}>{state.message}</p> : null}
+    <button type="submit" disabled={pending} className="min-h-12 rounded-[14px] bg-[var(--brand-blue)] px-5 text-sm font-bold text-white disabled:opacity-60">{pending ? "Publishing…" : "Publish product"}</button>
+  </form>;
+}
+
+function Field({ name, label, type = "text", required = false }: { name: string; label: string; type?: string; required?: boolean }) { return <label className="grid gap-2 text-sm font-bold text-[var(--deep-navy)]">{label}<input name={name} type={type} required={required} className="h-12 rounded-[14px] border border-[var(--divider)] px-3 font-normal outline-none focus:ring-2 focus:ring-[var(--brand-blue)]" /></label>; }
