@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EC Tech Hub
 
-## Getting Started
+**Technology community and resources web application for the Eastern Cape | LX Obsidian Labs**
 
-First, run the development server:
+**Stage:** To confirm. **Verification:** Repository structure and package scripts inspected; feature behavior, tests and deployment have not been independently verified.
+
+## Overview
+
+This is a Next.js application with a Supabase integration dependency. The repository includes application source under `src/`, public assets and a checked-in npm lockfile. The presence of a dependency does not establish that a corresponding integration or feature is operational.
+
+## Development
+
+Use a Node.js version compatible with the checked-in Next.js release:
 
 ```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Verification
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The current manifest declares:
 
-## Learn More
+```bash
+npm run lint
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+No automated `test` script is declared in the inspected root manifest. Do not describe this repository as fully tested or production-ready without corresponding evidence.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Architecture and security review
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Inspect `src/` to document implemented routes, user roles and server/client boundaries.
+- Review `supabase/` and related source code for migrations, row-level security and authorization.
+- Record required environment variable **names**, never secret values.
+- Verify validation, error handling, authentication and data privacy for any public API routes.
+- Check keyboard accessibility, mobile layouts, performance and deployment status.
+- Add reproducible tests and CI results for the implemented scope.
+- Confirm license, content ownership and third-party attribution before redistribution.
 
-## Deploy on Vercel
+## Project evidence
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+A configured deployment URL or package dependency is not proof of successful production operation. Record exact reviewed commit SHA, test commands and outcomes, and the date of any live smoke test.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Maintainer
+
+**LX Obsidian Labs** · [Engineering portfolio](https://github.com/lx-obsidian-labs/lx-obsidian-labs) · [Contact](mailto:vilanenathan@gmail.com)
