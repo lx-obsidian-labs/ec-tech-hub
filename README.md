@@ -1,5 +1,7 @@
 # EC Tech Hub
 
+**Engineering verification:** [Documentation verification](DOCUMENTATION_VERIFICATION.md). This guide separates documented functionality from independently verified test and deployment evidence.
+
 **Technology community and resources web application for the Eastern Cape | LX Obsidian Labs**
 
 **Stage:** To confirm. **Verification:** Repository structure and package scripts inspected; feature behavior, tests and deployment have not been independently verified.
